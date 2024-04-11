@@ -46,19 +46,19 @@ namespace CustomPlugin
                     bool ItMatches = true;
                     switch (scheduleDay)
                     {
-                        case 1:
+                        case 0:
                             ItMatches = WorksOnMonday;
                             break;
-                        case 2:
+                        case 1:
                             ItMatches = WorksOnTuesday;
                             break;
-                        case 3:
+                        case 2:
                             ItMatches = WorksOnWednesday;
                             break;
-                        case 4:
+                        case 3:
                             ItMatches = WorksOnThursday;
                             break;
-                        case 5:
+                        case 4:
                             ItMatches = WorksOnFriday;
                             break;
                     }
@@ -87,7 +87,7 @@ namespace CustomPlugin
             {
                 int? scheduleDayValue = target.GetAttributeValue<OptionSetValue>("lft_scheduledon")?.Value;
 
-                Entity getAssignedAgent = service.Retrieve(assignedAgentRef.LogicalName, assignedAgentRef.Id, new ColumnSet("lft_isscheduledmonday", "lft_isscheduledtuesday", "lft_isscheduledwednesday", "lft_isscheduledthursday", "lft_isscheduledfriday", "lft_agentname"));
+                Entity getAssignedAgent = service.Retrieve(assignedAgentRef.LogicalName, assignedAgentRef.Id, new ColumnSet("lft_isscheduledmonday", "lft_isscheduledtuesday", "lft_isscheduledwednesday", "lft_isscheduledthursday", "lft_isscheduledfriday", "lft_name"));
 
                 if (getAssignedAgent != null)
                 {
@@ -103,19 +103,19 @@ namespace CustomPlugin
                     bool ItMatches = true;
                     switch (scheduleDay)
                     {
-                        case 1:
+                        case 0:
                             ItMatches = WorksOnMonday;
                             break;
-                        case 2:
+                        case 1:
                             ItMatches = WorksOnTuesday;
                             break;
-                        case 3:
+                        case 2:
                             ItMatches = WorksOnWednesday;
                             break;
-                        case 4:
+                        case 3:
                             ItMatches = WorksOnThursday;
                             break;
-                        case 5:
+                        case 4:
                             ItMatches = WorksOnFriday;
                             break;
                     }
